@@ -1,23 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Lazy from './lazy';
 
 const App: React.FC = () => {
+  const placeholder="https://picsum.photos/id/237/500/300"
+
+  const generateImg=()=>`https://picsum.photos/id/${Math.floor(Math.random() * 999)}/500/300`
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <div className="container">
+      <Lazy placeholder={placeholder} src={generateImg()} ratio={0.1}/>
+      <Lazy placeholder={placeholder} src={generateImg()} ratio={0.1}/>
+      <Lazy placeholder={placeholder} src={generateImg()} ratio={0.1}/>
+      <Lazy placeholder={placeholder} src={generateImg()} ratio={0.1}/>
+      <Lazy placeholder={placeholder} src={generateImg()} ratio={0.1}/>
+      <Lazy placeholder={placeholder} src={generateImg()} ratio={0.1}/>
+      </div>
       </header>
     </div>
   );
